@@ -2,10 +2,28 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-    <title>Soket Chattin'</title>
+<title>Socket Chattin'</title>
+<script src="/vendor/Socket.IO-client/socket.io.js">
+<script>
+try {
+    io.setPath('/vendor/Socket.IO-client/');
+    
+    socket = new io.Socket('lynx.localdev.com');
+    socket.connect();
+    socket.send('some data');
+    socket.addEvent('message', function(data){
+        alert('got some data' + data);
+    });
+    
+} catch (e) {
+    alert(e);
+}
+
+</script>
+
 </head>
 <body>
-    <h1>Soket Chattin'</h1>
+    <h1>Socket Chattin'</h1>
     
 </body>
 </html>
