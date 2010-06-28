@@ -8,6 +8,8 @@ fs = require('fs');
 // Local
 require.paths.unshift(__dirname);
 require.paths.push(__dirname + '/lib');
+var fileutils = require('./vendor/fileutils/fileutils');
+
 function Dump(thing) {
     if (arguments.length > 1) {
         thing = arguments;
@@ -17,15 +19,13 @@ function Dump(thing) {
 
 // the vendor directory
 var dirs = fs.readdirSync('./vendor');
-for (i in dirs) {
-    require.paths.push(fs.realpathSync('./vendor/' + dirs[i]));
-}
 
+Dump(require.paths);
 
-var io = require('socket.io');
+var io = require('./vendor/socket.io-node/lib/socket.io');
 
 // require the router
-var router = require('router');
+var router = require('./lib/router');
 
 // socket.io, I choose you
 // simplest chat application evar

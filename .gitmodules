@@ -1,9 +1,0 @@
-[submodule "vendor/socket.io-client"]
-	path = vendor/socket.io-client
-	url = http://github.com/LearnBoost/Socket.IO.git
-[submodule "vendor/socket.io-node"]
-	path = vendor/socket.io-node
-	url = http://github.com/LearnBoost/Socket.IO-node.git
-[submodule "vendor/fileutils"]
-	path = vendor/fileutils
-	url = http://github.com/dandean/fileutils.git
